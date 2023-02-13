@@ -867,7 +867,8 @@ ngx_http_ajp_merge_loc_conf(ngx_conf_t *cf, void *parent, void *child)
     ngx_conf_merge_ptr_value(conf->upstream.cache,
                              prev->upstream.cache, NULL);
 
-    if (conf->upstream.cache && conf->upstream.cache->data == NULL) {
+    ngx_shm_zone_t* t = conf->upstream.cache;
+    if (conf->upstream.cache && t->data == NULL) {
         ngx_shm_zone_t  *shm_zone;
 
         shm_zone = conf->upstream.cache;
