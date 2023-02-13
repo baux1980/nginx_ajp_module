@@ -1,4 +1,8 @@
+This is a fork of https://github.com/yaoweibin/nginx_ajp_module
 
+This has jvm_route and keepalive maintained anymore
+
+Tested with nginx 1.14.2 and beyond.
 
 # Name
 
